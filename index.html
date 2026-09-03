@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forez Web — Création de sites internet professionnels</title>
+<meta name="description" content="Forez Web conçoit des sites vitrines professionnels pour les artisans, commerçants et TPE. Un site optimisé, conforme et pensé pour générer des contacts. Devis gratuit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16110c;--ink-soft:#4c463f;--paper:#ffffff;--wash:#f6f4f0;
+    --brand:#1f3d2f;--brand-2:#2c5642;--brand-light:#eaf0ec;--accent:#b8863b;
+    --line:#e6e2da;--maxw:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Libre Franklin',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.62;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Newsreader',Georgia,serif;line-height:1.12;letter-spacing:-0.01em;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  section{padding:96px 0}
+  @media(max-width:640px){section{padding:60px 0}}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 26px}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Newsreader';font-weight:500;font-size:1.4rem}
+  .logo .mark{width:34px;height:34px;border:1.5px solid var(--brand);border-radius:3px;display:grid;place-items:center;color:var(--brand);flex:none;font-weight:600;font-family:'Libre Franklin';font-size:1rem}
+  .navlinks{display:flex;gap:34px;font-weight:500;font-size:.93rem}
+  .navlinks a{color:var(--ink-soft)}
+  .navlinks a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;padding:13px 24px;border-radius:2px;font-size:.92rem;transition:background .15s,transform .12s;cursor:pointer;border:none;font-family:inherit}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover{background:var(--brand-2)}
+  .btn-outline{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+  .btn-outline:hover{background:var(--brand-light)}
+  .nav .btn{padding:11px 22px}
+  @media(max-width:820px){.navlinks{display:none}}
+  .hero{background:var(--wash);border-bottom:1px solid var(--line)}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:100px 26px}
+  .eyebrow{font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--accent);margin-bottom:20px}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.6rem);margin-bottom:22px}
+  .hero p.lead{font-size:1.12rem;color:var(--ink-soft);max-width:46ch;margin-bottom:32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-side{border-left:2px solid var(--brand);padding:6px 0 6px 28px}
+  .hero-side .stat{margin-bottom:26px}
+  .hero-side .stat:last-child{margin-bottom:0}
+  .hero-side .stat b{font-family:'Newsreader';font-size:2.4rem;color:var(--brand);display:block;line-height:1}
+  .hero-side .stat span{color:var(--ink-soft);font-size:.95rem}
+  @media(max-width:820px){.hero .wrap{grid-template-columns:1fr;gap:40px}.hero-side{border-left:none;border-top:2px solid var(--brand);padding:26px 0 0}}
+  .intro .wrap{max-width:760px;text-align:center}
+  h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:20px}
+  .intro p{font-size:1.14rem;color:var(--ink-soft)}
+  .offer{background:var(--wash)}
+  .offer .head{max-width:640px;margin:0 auto 54px;text-align:center}
+  .offer .head p{color:var(--ink-soft);font-size:1.06rem;margin-top:12px}
+  .offer-main{background:var(--brand);color:#fff;border-radius:6px;padding:48px;display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center;margin-bottom:26px}
+  .offer-main h3{font-size:1.9rem;color:#fff;margin-bottom:14px}
+  .offer-main p{color:rgba(255,255,255,.82);margin-bottom:20px}
+  .offer-main .price{font-family:'Newsreader';font-size:1.05rem;color:#fff}
+  .offer-main .price b{font-size:2rem}
+  .offer-main .price small{display:block;font-family:'Libre Franklin';font-size:.85rem;color:rgba(255,255,255,.6);margin-top:6px}
+  .incl{background:#fff;border:1px solid var(--line);border-radius:6px;padding:30px}
+  .incl h4{font-family:'Libre Franklin';font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--accent);margin-bottom:18px}
+  .incl ul{list-style:none;display:grid;gap:13px}
+  .incl li{display:flex;gap:12px;align-items:flex-start;font-size:.97rem;color:var(--ink-soft)}
+  .incl li .c{color:var(--brand);flex:none;font-weight:700}
+  @media(max-width:720px){.offer-main{grid-template-columns:1fr;gap:28px;padding:34px}}
+  .opts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:820px){.opts{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.opts{grid-template-columns:1fr}}
+  .opt{border:1px solid var(--line);border-radius:6px;padding:26px;background:#fff}
+  .opt .tag{font-size:.72rem;font-weight:600;letter-spacing:.04em;color:var(--accent);margin-bottom:12px}
+  .opt h3{font-family:'Libre Franklin';font-size:1.08rem;font-weight:600;margin-bottom:8px}
+  .opt p{color:var(--ink-soft);font-size:.92rem}
+  .method .head{text-align:center;max-width:600px;margin:0 auto 52px}
+  .mrow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  @media(max-width:720px){.mrow{grid-template-columns:1fr}}
+  .mstep{padding:32px 28px;border-right:1px solid var(--line)}
+  .mstep:last-child{border-right:none}
+  @media(max-width:720px){.mstep{border-right:none;border-bottom:1px solid var(--line)}.mstep:last-child{border-bottom:none}}
+  .mstep .n{font-family:'Newsreader';font-size:1.5rem;color:var(--accent);margin-bottom:12px}
+  .mstep h3{font-family:'Libre Franklin';font-size:1.05rem;font-weight:600;margin-bottom:8px}
+  .mstep p{color:var(--ink-soft);font-size:.92rem}
+  .cta{background:var(--brand);color:#fff;text-align:center}
+  .cta h2{color:#fff;max-width:22ch;margin:0 auto 16px}
+  .cta p{color:rgba(255,255,255,.8);max-width:44ch;margin:0 auto 30px;font-size:1.06rem}
+  .cta .mail{font-family:'Newsreader';font-size:1.3rem;color:#fff;display:inline-block;margin-top:22px}
+  .cta .btn-accent{background:var(--accent);color:#16110c}
+  .cta .btn-accent:hover{background:#c9974a}
+  footer{background:var(--ink);color:#9d968c;padding:40px 0;font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+  footer .logo{color:#fff}footer .logo .mark{border-color:#6b6459;color:#fff}
+  footer a{color:#9d968c}footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <div class="logo"><span class="mark">F</span>Forez Web</div>
+    <nav class="navlinks">
+      <a href="#offre">L'offre</a>
+      <a href="#options">Savoir-faire</a>
+      <a href="#methode">Méthode</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary">Demander un devis</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Création de sites internet</div>
+      <h1>Un site professionnel qui travaille pour votre activité.</h1>
+      <p class="lead">Forez Web accompagne les artisans, commerçants et TPE dans la création de leur site vitrine. Un site conçu pour être trouvé sur Google et transformer les visiteurs en clients.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Demander un devis gratuit</a>
+        <a href="#offre" class="btn btn-outline">Découvrir l'offre</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="stat"><b>100%</b><span>des sites optimisés pour mobile et Google</span></div>
+      <div class="stat"><b>RGPD</b><span>conformité légale incluse dans chaque projet</span></div>
+      <div class="stat"><b>Local</b><span>un interlocuteur unique, proche et réactif</span></div>
+    </div>
+  </div>
+</section>
+<section class="intro">
+  <div class="wrap">
+    <h2>Votre vitrine compte plus que jamais</h2>
+    <p>La majorité de vos futurs clients vous cherchent en ligne avant de vous contacter. Un site professionnel n'est plus un luxe : c'est le premier contact, celui qui rassure et qui décide. Forez Web le conçoit pour vous, de A à Z.</p>
+  </div>
+</section>
+<section class="offer" id="offre">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">L'offre</div>
+      <h2>Une prestation claire, sans surprise</h2>
+      <p>Un site vitrine professionnel, conçu sur mesure, avec l'essentiel déjà compris.</p>
+    </div>
+    <div class="offer-main">
+      <div>
+        <h3>Site vitrine professionnel</h3>
+        <p>De la conception à la mise en ligne, un site sur mesure qui reflète votre sérieux et met en valeur votre activité.</p>
+        <div class="price">À partir de <b>800 €</b>
+          <small>Tarif de départ — devis personnalisé selon votre projet</small>
+        </div>
+      </div>
+      <div class="incl">
+        <h4>INCLUS DANS CHAQUE PROJET</h4>
+        <ul>
+          <li><span class="c">✓</span> Design sur mesure, adapté à votre métier</li>
+          <li><span class="c">✓</span> Affichage optimisé sur mobile et ordinateur</li>
+          <li><span class="c">✓</span> Référencement local de base sur Google</li>
+          <li><span class="c">✓</span> Conformité RGPD et mentions légales</li>
+          <li><span class="c">✓</span> Accompagnement jusqu'à la mise en ligne</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="options">
+  <div class="wrap">
+    <div class="head" style="text-align:center;max-width:600px;margin:0 auto 52px">
+      <div class="eyebrow">Savoir-faire</div>
+      <h2>Ce qu'on peut faire pour vous</h2>
+      <p style="color:var(--ink-soft);font-size:1.06rem;margin-top:12px">Chaque besoin est différent. Voici nos prestations complémentaires, toujours étudiées et chiffrées sur devis.</p>
+    </div>
+    <div class="opts">
+      <div class="opt"><div class="tag">SUR DEVIS</div><h3>Fiche Google Business</h3><p>Création ou optimisation de votre fiche Google : la première chose que voient vos clients sur Maps.</p></div>
+      <div class="opt"><div class="tag">SUR DEVIS</div><h3>Référencement avancé</h3><p>Travail SEO approfondi pour vous positionner durablement sur vos mots-clés stratégiques.</p></div>
+      <div class="opt"><div class="tag">SUR DEVIS</div><h3>Suivi &amp; évolutions</h3><p>Mises à jour, sauvegardes et modifications de votre site dans la durée, selon la formule choisie.</p></div>
+      <div class="opt"><div class="tag">SUR DEVIS</div><h3>Rédaction de contenu</h3><p>Textes professionnels écrits pour convaincre vos visiteurs et plaire à Google.</p></div>
+    </div>
+  </div>
+</section>
+<section class="method" id="methode">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Méthode</div>
+      <h2>Un déroulé simple et cadré</h2>
+    </div>
+    <div class="mrow">
+      <div class="mstep"><div class="n">01</div><h3>Échange</h3><p>Un premier rendez-vous pour comprendre votre activité et vos objectifs.</p></div>
+      <div class="mstep"><div class="n">02</div><h3>Proposition</h3><p>Un devis détaillé et un prix ferme, sans engagement de votre part.</p></div>
+      <div class="mstep"><div class="n">03</div><h3>Réalisation</h3><p>Conception du site et ajustements avec vous jusqu'à validation.</p></div>
+      <div class="mstep"><div class="n">04</div><h3>Mise en ligne</h3><p>Publication, référencement et suivi de votre site en production.</p></div>
+    </div>
+  </div>
+</section>
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>Discutons de votre projet</h2>
+    <p>Le devis est gratuit et sans engagement. Présentez-moi votre activité, je vous réponds rapidement.</p>
+    <a href="mailto:forezweb42@gmail.com" class="btn btn-accent">Demander un devis gratuit</a>
+    <div><a href="mailto:forezweb42@gmail.com" class="mail">forezweb42@gmail.com</a></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="logo" style="display:flex;align-items:center;gap:11px"><span class="mark">F</span>Forez Web</div>
+    <div>Création de sites internet professionnels</div>
+    <div><a href="mailto:forezweb42@gmail.com">forezweb42@gmail.com</a></div>
+  </div>
+</footer>
+</body>
+</html>
