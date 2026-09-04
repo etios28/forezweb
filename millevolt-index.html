@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mille Volt Électricité — Électricien à Roanne, Riorges, Mably</title>
+<meta name="description" content="Mille Volt, électricien dans le Roannais : installation neuve, mise aux normes, réfection de tableaux, mise en sécurité. Devis gratuit. Le Coteau, Riorges, Mably, Roanne, Charlieu, Villerest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Archivo+Narrow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Style : industriel clair, blocs francs, jaune sécurité + bleu ardoise. Rien de "sombre dégradé IA". */
+  :root{
+    --ink:#1a1d21;--ink-soft:#565d66;--paper:#ffffff;--concrete:#eef1f4;
+    --slate:#2b3947;--slate-2:#3a4b5c;--volt:#ffd21f;--volt-deep:#e8b600;
+    --line:#dde3e9;--maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Archivo Narrow',system-ui,sans-serif;color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Archivo',sans-serif;line-height:1.02;text-transform:uppercase;letter-spacing:-0.01em}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:76px 0}
+  @media(max-width:640px){section{padding:48px 0}}
+
+  header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{display:flex;align-items:center;gap:11px;font-family:'Archivo';font-weight:800;font-size:1.35rem;text-transform:uppercase;letter-spacing:-0.02em}
+  .logo .m{width:38px;height:38px;background:var(--volt);display:grid;place-items:center;color:var(--ink);flex:none;transform:rotate(-4deg)}
+  .call{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;font-family:'Archivo';font-weight:700;padding:11px 20px;font-size:.95rem;text-transform:uppercase;letter-spacing:.02em}
+  .call:hover{background:var(--slate)}
+
+  /* hero : split franc, bande jaune diagonale */
+  .hero{background:var(--concrete);position:relative;overflow:hidden;border-bottom:3px solid var(--ink)}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:76px 24px}
+  .kicker{display:inline-block;background:var(--volt);color:var(--ink);font-family:'Archivo';font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.5rem,6vw,4.3rem);font-weight:800;margin-bottom:18px}
+  .hero h1 .y{color:var(--volt-deep);-webkit-text-stroke:1px var(--ink)}
+  .hero p{font-size:1.12rem;color:var(--ink-soft);max-width:40ch;margin-bottom:28px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Archivo';font-weight:700;padding:15px 26px;font-size:.98rem;text-transform:uppercase;letter-spacing:.02em;cursor:pointer;border:none}
+  .btn-volt{background:var(--volt);color:var(--ink);border:2px solid var(--ink)}
+  .btn-volt:hover{background:var(--volt-deep)}
+  .btn-line{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+  .btn-line:hover{background:var(--ink);color:#fff}
+  .hero-panel{background:var(--slate);color:#fff;padding:32px;position:relative}
+  .hero-panel::before{content:"";position:absolute;top:-14px;right:-14px;width:60px;height:60px;background:var(--volt)}
+  .hero-panel h3{font-size:1.1rem;color:var(--volt);margin-bottom:18px;font-family:'Archivo';font-weight:700}
+  .hero-panel .li{display:flex;gap:11px;padding:8px 0;font-size:.98rem;color:#d5dde5;border-bottom:1px solid rgba(255,255,255,.1)}
+  .hero-panel .li:last-child{border:none}
+  .hero-panel .li b{color:var(--volt);font-family:'Archivo';flex:none}
+  @media(max-width:820px){.hero .wrap{grid-template-columns:1fr;gap:34px}.hero p{max-width:none}}
+
+  /* bandeau chiffres */
+  .band{background:var(--ink);color:#fff}
+  .band .wrap{display:flex;justify-content:space-between;gap:16px;padding:0;flex-wrap:wrap}
+  .band .c{flex:1;min-width:150px;padding:26px 24px;border-right:1px solid rgba(255,255,255,.12)}
+  .band .c:last-child{border:none}
+  .band .c b{font-family:'Archivo';font-weight:800;font-size:1.5rem;color:var(--volt);display:block;text-transform:uppercase}
+  .band .c span{font-size:.9rem;color:#aeb8c2}
+
+  /* prestations : grille numérotée façon fiche technique */
+  .presta h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:8px}
+  .presta .sub{color:var(--ink-soft);margin-bottom:44px;font-size:1.05rem;max-width:50ch}
+  .plist{border-top:3px solid var(--ink)}
+  .prow{display:grid;grid-template-columns:60px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .12s}
+  .prow:hover{background:var(--concrete)}
+  .prow .num{font-family:'Archivo';font-weight:800;font-size:1.4rem;color:var(--volt-deep)}
+  .prow h3{font-size:1.3rem;margin-bottom:6px;text-transform:none}
+  .prow p{color:var(--ink-soft);font-size:.98rem}
+
+  /* zones */
+  .zones{background:var(--slate);color:#fff}
+  .zones h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:8px}
+  .zones .sub{color:#aeb8c2;margin-bottom:30px}
+  .ztags{display:flex;flex-wrap:wrap;gap:10px}
+  .ztags span{border:1.5px solid rgba(255,255,255,.28);padding:9px 18px;font-family:'Archivo';font-weight:600;font-size:.92rem;text-transform:uppercase;letter-spacing:.02em}
+  .ztags span:hover{background:var(--volt);color:var(--ink);border-color:var(--volt)}
+
+  /* CTA */
+  .cta{background:var(--volt);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);text-align:center}
+  .cta h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:12px}
+  .cta p{color:#5c4d00;max-width:42ch;margin:0 auto 26px;font-size:1.08rem}
+  .cta .phone{font-family:'Archivo';font-weight:800;font-size:2rem;margin-top:16px}
+
+  footer{background:var(--ink);color:#9aa5b0;padding:38px 0;font-size:.92rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  footer .logo{color:#fff}
+  footer .demo{border-top:1px solid rgba(255,255,255,.12);margin-top:24px;padding-top:16px;font-size:.8rem;color:#6d7883;text-align:center}
+  footer .demo b{color:var(--volt)}
+
+  .mcall{position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--volt);border-top:2px solid var(--ink);padding:13px;text-align:center;display:none}
+  .mcall a{color:var(--ink);font-family:'Archivo';font-weight:800;text-transform:uppercase;font-size:1.02rem}
+  @media(max-width:800px){.mcall{display:block}body{padding-bottom:56px}}
+  @media(max-width:520px){.logo{font-size:1.1rem}.call{padding:9px 14px;font-size:.82rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="logo"><span class="m"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>Mille&nbsp;Volt</div>
+    <a href="tel:0788709591" class="call">07 88 70 95 91</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Électricien · Roannais</span>
+      <h1>Le courant passe <span class="y">bien</span> avec Mille&nbsp;Volt.</h1>
+      <p>Installation neuve, mise aux normes, réfection de tableaux. Un électricien réactif et méticuleux pour vos travaux dans tout le Roannais.</p>
+      <div class="hero-cta">
+        <a href="tel:0788709591" class="btn btn-volt">Devis gratuit</a>
+        <a href="#presta" class="btn btn-line">Mes prestations</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <h3>EN BREF</h3>
+      <div class="li"><b>›</b> Installation neuve & rénovation</div>
+      <div class="li"><b>›</b> Mise aux normes NF C 15-100</div>
+      <div class="li"><b>›</b> Réfection de tableaux électriques</div>
+      <div class="li"><b>›</b> Devis gratuit, travail soigné</div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div class="c"><b>Neuf & réno</b><span>installation complète</span></div>
+    <div class="c"><b>Aux normes</b><span>NF C 15-100</span></div>
+    <div class="c"><b>Lun–Ven</b><span>8h à 17h</span></div>
+    <div class="c"><b>Roannais</b><span>7 communes couvertes</span></div>
+  </div>
+</div>
+
+<section class="presta" id="presta">
+  <div class="wrap">
+    <h2>Mes prestations</h2>
+    <p class="sub">Du petit dépannage à l'installation complète, un travail propre et aux normes.</p>
+    <div class="plist">
+      <div class="prow"><div class="num">01</div><div><h3>Installation neuve</h3><p>Câblage complet pour construction ou extension, réalisé dans les règles de l'art.</p></div></div>
+      <div class="prow"><div class="num">02</div><div><h3>Mise aux normes & sécurité</h3><p>Remplacement d'équipements vétustes ou non conformes qui présentent un risque. Mise en sécurité de l'installation existante.</p></div></div>
+      <div class="prow"><div class="num">03</div><div><h3>Réfection de tableaux électriques</h3><p>Contrôle, réfection et remplacement du tableau et de ses composants (disjoncteurs, différentiels, fusibles).</p></div></div>
+      <div class="prow"><div class="num">04</div><div><h3>Pré-diagnostic avant DPE</h3><p>Vérification et contrôle de votre installation en vue du diagnostic et de la mise aux normes.</p></div></div>
+      <div class="prow"><div class="num">05</div><div><h3>Éclairage intérieur & extérieur</h3><p>Installation et rénovation de vos points lumineux, à l'intérieur comme à l'extérieur.</p></div></div>
+      <div class="prow"><div class="num">06</div><div><h3>Réseaux informatiques & courant faible</h3><p>Câblage de réseaux informatiques et courant faible pour la maison ou le local pro.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="zones">
+  <div class="wrap">
+    <h2>Zone d'intervention</h2>
+    <p class="sub">J'interviens dans tout le Roannais.</p>
+    <div class="ztags">
+      <span>Roanne</span><span>Le Coteau</span><span>Riorges</span><span>Mably</span><span>Charlieu</span><span>Villerest</span><span>Perreux</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>Un projet électrique ?</h2>
+    <p>Appelez-moi pour un devis gratuit. Réponse rapide, travail soigné.</p>
+    <a href="tel:0788709591" class="btn btn-line" style="border-color:var(--ink)">Demander un devis</a>
+    <div class="phone">07 88 70 95 91</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo" style="display:flex;align-items:center;gap:11px"><span class="m" style="width:32px;height:32px;background:var(--volt);display:grid;place-items:center;transform:rotate(-4deg)"><svg width="17" height="17" viewBox="0 0 24 24" fill="#1a1d21"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></span>Mille Volt</div>
+    <div>Électricien · Roannais<br>07 88 70 95 91 · contact@millevolt.fr</div>
+    <div>Lun–Ven · 8h–17h</div>
+  </div>
+  <div class="wrap"><div class="demo">Maquette de démonstration réalisée par <b>Forez Web</b></div></div>
+</footer>
+
+<div class="mcall"><a href="tel:0788709591">Appeler — 07 88 70 95 91</a></div>
+</body>
+</html>
